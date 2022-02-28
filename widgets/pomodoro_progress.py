@@ -21,41 +21,12 @@ class PomodoroProgress(QWidget):
     self.text_color = 0xff79c6
     self.enable_shadow = True
 
-    # Add button
-    self.pressed_button = False
-    self.add_action_button()
-
     # BG
     self.enable_bg = True
     self.bg_color = 0xffffff
 
     # set Default size without layout
     self.resize(self.width, self.height)
-
-  # add button
-  def add_action_button(self):
-    self.button = QPushButton("Start", self)
-    self.button.setStyleSheet("""QPushButton {
-                                  width: 100px;
-                                  height: 25px;
-                                  color: rgb(151, 159, 200);
-                                  background-color: rgb(68, 71, 90);
-                                  font-size: 18px;
-                                  border-radius: 12px;}
-      
-                                QPushButton:hover:!pressed {
-                                  background-color: rgb(151, 159, 200);
-                                  color:  rgb(68, 71, 90);}""")
-    self.button.setCursor(Qt.PointingHandCursor)
-    self.button.move(self.width - self.button.width() -
-                     self.progress_width - 75, self.height - 70)
-    self.button.clicked.connect(self.start_timer)
-    self.button.show()
-
-  # start timer
-  def start_timer(self):
-    self.pressed_button = ~self.pressed_button
-    self.button.setText("Stop" if self.pressed_button else "Start")
 
   # add dropshadow
   def add_shadow(self, enable):
@@ -93,8 +64,14 @@ class PomodoroProgress(QWidget):
 
     # Pen
     pen = QPen()
-    pen.setColor(QColor(self.progress_color))
     pen.setWidth(self.progress_width)
+
+    if self.enable_bg:
+      pen.setColor(QColor(self.bg_color))
+      paint.setPen(pen)
+      paint.drawArc(margin, margin, width, height, 0, 360 * 16)
+
+    pen.setColor(QColor(self.progress_color))
 
     # set Round Cap
     if self.progress_rounded_cap:
@@ -103,11 +80,6 @@ class PomodoroProgress(QWidget):
     # Create arc / Circular progress
     paint.setPen(pen)
     paint.drawArc(margin, margin, width, height, 90 * 16, value * 16)
-
-    # Create text
-    # pen.setColor(QColor(self.text_color))
-    # paint.setPen(pen)
-    # paint.drawText(rect, Qt.AlignCenter, f"{self.value}{self.suffix}")
 
     # End
     paint.end()

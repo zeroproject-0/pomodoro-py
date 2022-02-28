@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Form generated from reading UI file 'mainMYdiny.ui'
+# Form generated from reading UI file 'maingTCFXj.ui'
 ##
 # Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -59,10 +59,28 @@ class Ui_Pomodoro(object):
 
     self.horizontalLayout.addWidget(self.label_2, 0, Qt.AlignHCenter)
 
+    self.cbAlwaysOnTop = QCheckBox(self.title)
+    self.cbAlwaysOnTop.setObjectName(u"cbAlwaysOnTop")
+    self.cbAlwaysOnTop.setMinimumSize(QSize(15, 25))
+    self.cbAlwaysOnTop.setMaximumSize(QSize(15, 25))
+    self.cbAlwaysOnTop.setStyleSheet(u"QCheckBox::indicator:checked {\n"
+                                     "	background-color: rgba(189, 147, 249, 145);\n"
+                                     "	border: none;\n"
+                                     "}\n"
+                                     "QCheckBox::indicator:unchecked{\n"
+                                     "	background-color: #ff79c6;\n"
+                                     "	border: none;\n"
+                                     "}")
+    self.cbAlwaysOnTop.setChecked(False)
+    self.cbAlwaysOnTop.setTristate(False)
+
+    self.horizontalLayout.addWidget(self.cbAlwaysOnTop)
+
     self.btnExit = QPushButton(self.title)
     self.btnExit.setObjectName(u"btnExit")
     self.btnExit.setMinimumSize(QSize(25, 25))
     self.btnExit.setMaximumSize(QSize(25, 25))
+    self.btnExit.setCursor(QCursor(Qt.PointingHandCursor))
     self.btnExit.setStyleSheet(u"QPushButton#btnExit {\n"
                                "	background-color: #282a36;\n"
                                "	color: #f8f8f2;\n"
@@ -122,18 +140,6 @@ class Ui_Pomodoro(object):
     self.gridLayout.setSpacing(0)
     self.gridLayout.setObjectName(u"gridLayout")
     self.gridLayout.setSizeConstraint(QLayout.SetMinAndMaxSize)
-    self.frame = QFrame(self.texts)
-    self.frame.setObjectName(u"frame")
-    self.frame.setMaximumSize(QSize(16777215, 16777215))
-    self.frame.setFrameShape(QFrame.NoFrame)
-    self.frame.setFrameShadow(QFrame.Raised)
-    self.verticalLayout_5 = QVBoxLayout(self.frame)
-    self.verticalLayout_5.setSpacing(0)
-    self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-    self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-
-    self.gridLayout.addWidget(self.frame, 2, 0, 1, 1, Qt.AlignBottom)
-
     self.label = QLabel(self.texts)
     self.label.setObjectName(u"label")
     self.label.setMaximumSize(QSize(16777215, 30))
@@ -149,6 +155,18 @@ class Ui_Pomodoro(object):
     self.label.setAlignment(Qt.AlignCenter)
 
     self.gridLayout.addWidget(self.label, 1, 0, 1, 1)
+
+    self.frame = QFrame(self.texts)
+    self.frame.setObjectName(u"frame")
+    self.frame.setMaximumSize(QSize(16777215, 16777215))
+    self.frame.setFrameShape(QFrame.NoFrame)
+    self.frame.setFrameShadow(QFrame.Raised)
+    self.verticalLayout_5 = QVBoxLayout(self.frame)
+    self.verticalLayout_5.setSpacing(0)
+    self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+    self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+
+    self.gridLayout.addWidget(self.frame, 2, 0, 1, 1, Qt.AlignBottom)
 
     self.verticalLayout_4.addLayout(self.gridLayout)
 
@@ -171,5 +189,6 @@ class Ui_Pomodoro(object):
     self.label_3.setText("")
     self.label_2.setText(QCoreApplication.translate(
         "Pomodoro", u"Pomodoro - zeroproject", None))
+    self.cbAlwaysOnTop.setText("")
     self.btnExit.setText(QCoreApplication.translate("Pomodoro", u"X", None))
   # retranslateUi

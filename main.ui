@@ -64,7 +64,9 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QFrame#title {
-	background: none;
+	background-color: #282a36;
+	color: #f8f8f2;
+	border-radius: 12px;
 }</string>
       </property>
       <property name="frameShape">
@@ -73,25 +75,122 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="btnExit">
-       <property name="geometry">
-        <rect>
-         <x>279</x>
-         <y>0</y>
-         <width>21</width>
-         <height>24</height>
-        </rect>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
        </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#btnExit {
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>assets/Logo.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">color: #f8f8f2;</string>
+         </property>
+         <property name="text">
+          <string>Pomodoro - zeroproject</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignVCenter">
+        <widget class="QCheckBox" name="cbAlwaysOnTop">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox::indicator:checked {
+	background-color: rgba(189, 147, 249, 145);
+	border: none;
+}
+QCheckBox::indicator:unchecked{
+	background-color: #ff79c6;
+	border: none;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="tristate">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnExit">
+         <property name="minimumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton#btnExit {
 	background-color: #282a36;
 	color: #f8f8f2;
+	border-radius: 12px;
 }</string>
-       </property>
-       <property name="text">
-        <string>X</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
@@ -220,13 +319,42 @@
               <number>0</number>
              </property>
              <item>
-              <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0">
+              <layout class="QGridLayout" name="gridLayout">
                <property name="sizeConstraint">
                 <enum>QLayout::SetMinAndMaxSize</enum>
                </property>
                <property name="spacing">
                 <number>0</number>
                </property>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Ubuntu</family>
+                   <pointsize>-1</pointsize>
+                   <weight>75</weight>
+                   <italic>false</italic>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">font-size: 24px;
+font: bold;</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">Pomodoro</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="0" alignment="Qt::AlignBottom">
                 <widget class="QFrame" name="frame">
                  <property name="maximumSize">
@@ -258,35 +386,6 @@
                    <number>0</number>
                   </property>
                  </layout>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Ubuntu</family>
-                   <pointsize>-1</pointsize>
-                   <weight>75</weight>
-                   <italic>false</italic>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">font-size: 24px;
-font: bold;</string>
-                 </property>
-                 <property name="text">
-                  <string notr="true">Pomodoro</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
                 </widget>
                </item>
               </layout>

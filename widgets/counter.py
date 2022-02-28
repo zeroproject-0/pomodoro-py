@@ -44,7 +44,6 @@ class Counter(QWidget):
     minutes = value // 60
     seconts = value % 60
 
-    print(minutes, seconts)
     self.minutes.display(self.parse_display(minutes))
     self.seconds.display(self.parse_display(seconts))
 
