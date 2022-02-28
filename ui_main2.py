@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-# Form generated from reading UI file 'mainMYdiny.ui'
+# Form generated from reading UI file 'mainbVWAyz.ui'
 ##
 # Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,9 +17,9 @@ class Ui_Pomodoro(object):
   def setupUi(self, Pomodoro):
     if not Pomodoro.objectName():
       Pomodoro.setObjectName(u"Pomodoro")
-    Pomodoro.resize(320, 345)
-    Pomodoro.setMinimumSize(QSize(300, 325))
-    Pomodoro.setMaximumSize(QSize(320, 345))
+    Pomodoro.resize(300, 300)
+    Pomodoro.setMinimumSize(QSize(300, 300))
+    Pomodoro.setMaximumSize(QSize(300, 300))
     font = QFont()
     font.setPointSize(16)
     Pomodoro.setFont(font)
@@ -29,73 +29,16 @@ class Ui_Pomodoro(object):
     self.verticalLayout.setSpacing(0)
     self.verticalLayout.setObjectName(u"verticalLayout")
     self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-    self.title = QFrame(self.centralwidget)
-    self.title.setObjectName(u"title")
-    self.title.setMinimumSize(QSize(0, 25))
-    self.title.setMaximumSize(QSize(16777215, 25))
-    self.title.setStyleSheet(u"QFrame#title {\n"
-                             "	background-color: #282a36;\n"
-                             "	color: #f8f8f2;\n"
-                             "	border-radius: 12px;\n"
-                             "}")
-    self.title.setFrameShape(QFrame.NoFrame)
-    self.title.setFrameShadow(QFrame.Raised)
-    self.horizontalLayout = QHBoxLayout(self.title)
-    self.horizontalLayout.setSpacing(0)
-    self.horizontalLayout.setObjectName(u"horizontalLayout")
-    self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-    self.label_3 = QLabel(self.title)
-    self.label_3.setObjectName(u"label_3")
-    self.label_3.setMinimumSize(QSize(25, 25))
-    self.label_3.setMaximumSize(QSize(25, 25))
-    self.label_3.setPixmap(QPixmap(u"assets/Logo.png"))
-    self.label_3.setScaledContents(True)
-
-    self.horizontalLayout.addWidget(self.label_3)
-
-    self.label_2 = QLabel(self.title)
-    self.label_2.setObjectName(u"label_2")
-    self.label_2.setStyleSheet(u"color: #f8f8f2;")
-
-    self.horizontalLayout.addWidget(self.label_2, 0, Qt.AlignHCenter)
-
-    self.btnExit = QPushButton(self.title)
-    self.btnExit.setObjectName(u"btnExit")
-    self.btnExit.setMinimumSize(QSize(25, 25))
-    self.btnExit.setMaximumSize(QSize(25, 25))
-    self.btnExit.setStyleSheet(u"QPushButton#btnExit {\n"
-                               "	background-color: #282a36;\n"
-                               "	color: #f8f8f2;\n"
-                               "	border-radius: 12px;\n"
-                               "}")
-
-    self.horizontalLayout.addWidget(self.btnExit)
-
-    self.verticalLayout.addWidget(self.title, 0, Qt.AlignTop)
-
     self.container = QFrame(self.centralwidget)
     self.container.setObjectName(u"container")
-    sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-    sizePolicy.setHorizontalStretch(0)
-    sizePolicy.setVerticalStretch(0)
-    sizePolicy.setHeightForWidth(
-        self.container.sizePolicy().hasHeightForWidth())
-    self.container.setSizePolicy(sizePolicy)
-    self.container.setMinimumSize(QSize(300, 300))
-    self.container.setMaximumSize(QSize(300, 300))
     self.container.setFrameShape(QFrame.NoFrame)
     self.container.setFrameShadow(QFrame.Sunken)
     self.verticalLayout_2 = QVBoxLayout(self.container)
     self.verticalLayout_2.setSpacing(0)
     self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-    self.verticalLayout_2.setContentsMargins(30, 30, 30, 30)
+    self.verticalLayout_2.setContentsMargins(20, 20, 20, 20)
     self.circle_bg = QFrame(self.container)
     self.circle_bg.setObjectName(u"circle_bg")
-    sizePolicy.setHeightForWidth(
-        self.circle_bg.sizePolicy().hasHeightForWidth())
-    self.circle_bg.setSizePolicy(sizePolicy)
-    self.circle_bg.setMinimumSize(QSize(240, 240))
-    self.circle_bg.setMaximumSize(QSize(240, 240))
     self.circle_bg.setStyleSheet(u"QFrame {\n"
                                  "	background-color: #282a36;\n"
                                  "	color: #f8f8f2;\n"
@@ -168,8 +111,4 @@ class Ui_Pomodoro(object):
   def retranslateUi(self, Pomodoro):
     Pomodoro.setWindowTitle(
         QCoreApplication.translate("Pomodoro", u"Pomodoro", None))
-    self.label_3.setText("")
-    self.label_2.setText(QCoreApplication.translate(
-        "Pomodoro", u"Pomodoro - zeroproject", None))
-    self.btnExit.setText(QCoreApplication.translate("Pomodoro", u"X", None))
   # retranslateUi

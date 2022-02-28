@@ -8,6 +8,7 @@ from ui_main import Ui_Pomodoro
 
 # import circular_progress
 from widgets import PomodoroProgress
+from widgets import Counter
 
 # Globals
 counter = 0
@@ -20,21 +21,31 @@ class MainWindow(QMainWindow):
     self.ui.setupUi(self)
 
     # Remove title bar
-    self.setWindowFlags(Qt.FramelessWindowHint)
+    self.setWindowFlag(Qt.FramelessWindowHint, True)
     self.setAttribute(Qt.WA_TranslucentBackground)
+
+    # Add counter
+    self.counter = Counter()
+    self.counter.set_value(120)
+    self.counter.setParent(self.ui.container)
+    self.counter.move(95, 120)
+    self.counter.setStyleSheet("background-color: #f00;")
+    self.counter.show()
 
     # Create circular progress
     self.progress = PomodoroProgress()
-    self.progress.width = 270
-    self.progress.height = 270
-    self.progress.value = 0
+    self.progress.value = 50
     self.progress.setFixedSize(self.progress.width, self.progress.height)
-    self.progress.move(15, 15)
+    self.progress.move(20, 20)
     self.progress.add_shadow(True)
     self.progress.font_size = 40
     # self.progress.bg_color = QColor(68, 71, 90, 140) #TODO Implement background color for progress bar
-    # self.progress.setParent(self.ui.centralwidget)
-    # self.progress.show()
+    self.progress.setParent(self.ui.container)
+    self.progress.show()
+
+    # Events
+    self.ui.centralwidget.setAttribute(Qt.WA_Hover)
+    self.ui.btnExit.clicked.connect(self.close)
 
     # Add drop shadow
     self.shadow = QGraphicsDropShadowEffect(self)
@@ -44,17 +55,18 @@ class MainWindow(QMainWindow):
     self.shadow.setColor(QColor(0, 0, 0, 120))
     self.setGraphicsEffect(self.shadow)
 
-    # Start button
-    self.ui.btnAction.clicked.connect(self.btnActionClick)
-
     # show window
     self.show()
 
-  def btnActionClick(self, button):
-    # Qtimer
-    self.timer = QTimer()
-    self.timer.timeout.connect(self.update)
-    self.timer.start(25)
+  def close(self):
+    sys.exit()
+
+  def event(self, event):
+    if event.type() == QEvent.HoverEnter:
+      print("enter")
+    elif event.type() == QEvent.HoverLeave:
+      print("leave")
+    return super().event(event)
 
   def update(self):
     global counter
@@ -74,4 +86,4 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
   app = QApplication(sys.argv)
   window = MainWindow()
-  sys.exit(app.exec_())
+  sys.exit(app.exec())
