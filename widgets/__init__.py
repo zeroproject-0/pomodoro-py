@@ -1,1 +1,1 @@
-from . circular_progress import PomodoroProgress
+from .pomodoro_progress import PomodoroProgress
