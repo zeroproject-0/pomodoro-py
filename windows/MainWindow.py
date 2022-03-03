@@ -2,6 +2,7 @@ import sys
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
+from PySide6.QtMultimedia import *
 
 # Forms
 from ui.ui_main import Ui_Pomodoro
@@ -10,7 +11,7 @@ from ui.ui_main import Ui_Pomodoro
 from widgets import PomodoroProgress
 from widgets import Counter
 
-from models import Settings
+from utils import Settings
 
 from .SettingsWindow import SettingsWindow
 
@@ -35,7 +36,8 @@ class MainWindow(QMainWindow):
 
     # Remove title bar
     self.setWindowFlag(Qt.FramelessWindowHint, True)
-    self.setWindowFlag(Qt.WindowStaysOnTopHint, False)
+    self.setWindowFlag(Qt.WindowStaysOnTopHint, settings.alway_on_top)
+    self.ui.cbAlwaysOnTop.setChecked(settings.alway_on_top)
     self.setAttribute(Qt.WA_TranslucentBackground)
 
     # Add counter
