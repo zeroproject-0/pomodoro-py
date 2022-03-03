@@ -2,7 +2,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
-from models import Settings
+from utils import Settings
 from ui import Ui_Settings
 
 
