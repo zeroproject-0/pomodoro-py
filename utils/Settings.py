@@ -9,7 +9,7 @@ class Settings:
     if Settings.__instance is not None:
       print("This class is a singleton!")
     self.auto_hide_title_bar = True
-    self.time = 1
+    self.time = 1500
     self.alway_on_top = False
     self.update_settings()
 

@@ -168,10 +168,21 @@ class MainWindow(QMainWindow):
 
     if self.current_time >= self.TOTAL_TIME:
       self.reset_timer()
+      url = QUrl.fromLocalFile("./assets/sounds/1-sound.wav")
+      audio_output = QAudioOutput()
+      audio_output.setVolume(80)
+      player = QMediaPlayer()
+      player.setAudioOutput(audio_output)
+      player.setSource(url)
+      player.setLoops(2)
+      player.play()
       self.show_message("Time is up!", "Good Job!",
                         "Do you want to start again?")
 
     self.current_time += 1
+
+  def finished(self):
+    print("finished")
 
   def show_message(self, title, text, message):
     msg = QMessageBox()
