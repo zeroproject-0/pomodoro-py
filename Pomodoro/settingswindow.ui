@@ -155,7 +155,7 @@
        <rect>
         <x>30</x>
         <y>110</y>
-        <width>171</width>
+        <width>71</width>
         <height>16</height>
        </rect>
       </property>
@@ -166,7 +166,7 @@
      <widget class="QCheckBox" name="cbAutoHideTitleBar">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>120</x>
         <y>110</y>
         <width>16</width>
         <height>20</height>
@@ -240,6 +240,42 @@ QPushButton:hover:!pressed {
       </property>
       <property name="text">
        <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>110</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Auto start rest time</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbAutoStartRestTime">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>110</y>
+        <width>16</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox::indicator:checked {
+	background-color: #ff79c6;
+	border: none;
+}
+QCheckBox::indicator:unchecked{
+	background-color: rgba(189, 147, 249, 145);
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
