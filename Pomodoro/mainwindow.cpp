@@ -76,7 +76,6 @@ void MainWindow::displayCounterTime(int total_time)
 
 void MainWindow::start()
 {
-	isAutoStartRestTimeActive = true;
 	if (timer->isActive()) {
 		timer->stop();
 		ui.actionButton->setText("Start");
@@ -242,7 +241,6 @@ void MainWindow::updateTimer()
 			tray_icon->showMessage(QString("Pomodoro"), QString("Time Finished"), QSystemTrayIcon::Information, 5000);
 
 		if (isAutoStartRestTimeActive && !isPomoTime) {
-			isAutoStartRestTimeActive = !isAutoStartRestTimeActive;
 			start();
 		}
 	}
@@ -252,8 +250,8 @@ void MainWindow::updateTimer()
 
 void MainWindow::updateSettings()
 {
-	reset_timer(pomo_time);
 	load_settings();
+	reset_timer(pomo_time);
 }
 
 void MainWindow::on_actionButton_clicked()
