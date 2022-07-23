@@ -76,6 +76,7 @@ void MainWindow::displayCounterTime(int total_time)
 
 void MainWindow::start()
 {
+	isAutoStartRestTimeActive = true;
 	if (timer->isActive()) {
 		timer->stop();
 		ui.actionButton->setText("Start");
@@ -99,6 +100,8 @@ void MainWindow::load_settings()
 
 	ui.cbAlwaysOnTop->setChecked(isAlwaysTop);
 	isHideTitleBarActive = Settings::load_settings("hide_title_bar", false, "SettingsWindow").value<bool>();
+	isAutoStartRestTimeActive = Settings::load_settings("auto_start_rest_time", true, "SettingsWindow").value<bool>();
+
 	ui.frame->setVisible(!isHideTitleBarActive);
 	ui.frame_2->setVisible(!isHideTitleBarActive);
 
@@ -174,27 +177,7 @@ void MainWindow::leaveEvent(QEvent*)
 
 void MainWindow::contextMenuEvent(QContextMenuEvent* e)
 {
-	QAction* action = (context_menu->exec(e->globalPos()));
-
-	//if (action == nullptr)
-	//	return;
-	//
-	//if (action->text() == QString("Settings")) {
-	//	open_settings();
-	//}
-	//else if (action->text() == QString("Exit")) {
-	//	this->close();
-	//}
-	//else if (action->text() == QString("Web")) {
-	//	QDesktopServices::openUrl(QUrl("https://zeroproject.dev"));
-	//}
-	//else if (action->text() == QString("Always on top")) {
-	//	toggle_always_top();
-	//	ui.cbAlwaysOnTop->setCheckState(isAlwaysTop ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
-	//}
-	//else if (action->text() == QString("Minimize")) {
-	//	this->showMinimized();
-	//}
+	(context_menu->exec(e->globalPos()));
 }
 
 void MainWindow::on_btnExit_clicked()
@@ -219,7 +202,7 @@ void MainWindow::on_btnOpenSettings_clicked()
 
 void MainWindow::on_btnIcon_clicked()
 {
-	QDesktopServices::openUrl(QUrl("https://zeroproject.dev"));
+	QDesktopServices::openUrl(QUrl(QApplication::organizationDomain()));
 }
 
 void MainWindow::tray_open_settings()
@@ -257,6 +240,11 @@ void MainWindow::updateTimer()
 
 		if(QSystemTrayIcon::isSystemTrayAvailable())
 			tray_icon->showMessage(QString("Pomodoro"), QString("Time Finished"), QSystemTrayIcon::Information, 5000);
+
+		if (isAutoStartRestTimeActive && !isPomoTime) {
+			isAutoStartRestTimeActive = !isAutoStartRestTimeActive;
+			start();
+		}
 	}
 
 	current_time += 1;

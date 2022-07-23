@@ -24,6 +24,7 @@ void SettingsWindow::on_btnSave_clicked()
 	Settings::save_settings("pomo_time", pomo_time, GROUP);
 	Settings::save_settings("rest_time", rest_time, GROUP);
 	Settings::save_settings("hide_title_bar", ui.cbAutoHideTitleBar->isChecked(), GROUP);
+	Settings::save_settings("auto_start_rest_time", ui.cbAutoStartRestTime->isChecked(), GROUP);
 
 	this->accept();
 }
@@ -39,10 +40,13 @@ void SettingsWindow::load_settings()
 
 	int pomo_time = Settings::load_settings("pomo_time", 1500, GROUP).value<int>();
 	int rest_time = Settings::load_settings("rest_time", 300, GROUP).value<int>();
+	bool hide_title_bar = Settings::load_settings("hide_title_bar", false, GROUP).value<bool>();
+	bool auto_start_rest_time = Settings::load_settings("auto_start_rest_time", false, GROUP).value<bool>();
 	
 	ui.sbPMinutes->setValue(pomo_time / 60);
 	ui.sbPSeconds->setValue(pomo_time % 60);
 	ui.sbRMinutes->setValue(rest_time / 60);
 	ui.sbRSeconds->setValue(rest_time % 60);
-	ui.cbAutoHideTitleBar->setChecked(Settings::load_settings("hide_title_bar", false, GROUP).value<bool>());
+	ui.cbAutoHideTitleBar->setChecked(hide_title_bar);
+	ui.cbAutoStartRestTime->setChecked(auto_start_rest_time);
 }

@@ -53,6 +53,7 @@ private:
 	//int hide_title_bar();
 
 	bool isHideTitleBarActive;
+	bool isAutoStartRestTimeActive;
 	bool isPomoTime;
 	bool isAlwaysTop;
 	QString GROUP;
