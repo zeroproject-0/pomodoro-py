@@ -28,6 +28,8 @@ MainWindow::MainWindow(QWidget* parent)
 
 	QAction* always_top_action = new QAction("Always on top");
 	QObject::connect(always_top_action, &QAction::triggered, this, &MainWindow::tray_always_top);
+	always_top_action->setCheckable(true);
+	always_top_action->setChecked(isAlwaysTop);
 	context_menu->addAction(always_top_action);
 
 	QAction* web_action = new QAction("Web");
