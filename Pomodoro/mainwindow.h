@@ -5,7 +5,7 @@
 #include "progressbar.h"
 #include "settingswindow.h"
 #include <QMenu>
-#include <QSystemtrayicon>
+#include <QSystemTrayicon>
 
 class MainWindow : public QMainWindow
 {
