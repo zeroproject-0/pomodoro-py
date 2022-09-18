@@ -289,6 +289,9 @@ QPlainTextEdit {
            <height>0</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">boder: none;</string>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
