@@ -28,6 +28,7 @@ protected:
 
 private slots:
 	void on_actionButton_clicked();
+	void on_stopButton_clicked();
 	void on_btnExit_clicked();
 	void on_btnMinimize_clicked();
 	void on_cbAlwaysOnTop_stateChanged();

@@ -273,6 +273,15 @@ QPlainTextEdit {
               <height>20</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <italic>false</italic>
+              <bold>true</bold>
+              <stylestrategy>PreferDefault</stylestrategy>
+              <kerning>true</kerning>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">font-size: 9pt;</string>
             </property>
@@ -551,7 +560,7 @@ QCheckBox::indicator:unchecked{
                   <property name="spacing">
                    <number>0</number>
                   </property>
-                  <item row="2" column="0">
+                  <item row="2" column="0" alignment="Qt::AlignHCenter">
                    <widget class="QFrame" name="buttons">
                     <property name="minimumSize">
                      <size>
@@ -591,8 +600,8 @@ QCheckBox::indicator:unchecked{
                       <widget class="QPushButton" name="actionButton">
                        <property name="maximumSize">
                         <size>
-                         <width>100</width>
-                         <height>16777215</height>
+                         <width>30</width>
+                         <height>30</height>
                         </size>
                        </property>
                        <property name="cursor">
@@ -609,6 +618,7 @@ QCheckBox::indicator:unchecked{
     background-color: rgb(68, 71, 90);
     font-size: 18px;
     border-radius: 12px;
+	margin-right: 5px;
 }
     
 QPushButton:hover:!pressed {
@@ -617,7 +627,50 @@ QPushButton:hover:!pressed {
 }</string>
                        </property>
                        <property name="text">
-                        <string>Start</string>
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="mainwindow.qrc">
+                         <normaloff>:/Icons/assets/play.png</normaloff>:/Icons/assets/play.png</iconset>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="stopButton">
+                       <property name="maximumSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="layoutDirection">
+                        <enum>Qt::LeftToRight</enum>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton {
+	width: 100px;
+    height: 25px;
+    color: rgb(151, 159, 200);
+    background-color: rgb(68, 71, 90);
+    font-size: 18px;
+    border-radius: 12px;
+	margin-left: 5px;
+}
+    
+QPushButton:hover:!pressed {
+    background-color: rgb(151, 159, 200);
+    color:  rgb(68, 71, 90);
+}</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset resource="mainwindow.qrc">
+                         <normaloff>:/Icons/assets/stop.png</normaloff>:/Icons/assets/stop.png</iconset>
                        </property>
                       </widget>
                      </item>
@@ -648,7 +701,7 @@ QPushButton:hover:!pressed {
                     </property>
                    </widget>
                   </item>
-                  <item row="1" column="0">
+                  <item row="1" column="0" alignment="Qt::AlignHCenter">
                    <widget class="QFrame" name="time">
                     <property name="minimumSize">
                      <size>

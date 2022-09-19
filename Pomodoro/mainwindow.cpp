@@ -80,11 +80,11 @@ void MainWindow::start()
 {
 	if (timer->isActive()) {
 		timer->stop();
-		ui.actionButton->setText("Start");
+		ui.actionButton->setIcon(QIcon(":/Icons/assets/play.png"));
 	}
 	else {
 		timer->start();
-		ui.actionButton->setText("Stop");
+		ui.actionButton->setIcon(QIcon(":/Icons/assets/pause.png"));
 	}
 }
 
@@ -116,7 +116,7 @@ void MainWindow::reset_timer(int total_time)
 		timer->stop();
 		ui.lbTimeTitle->setText(isPomoTime ? "Work Time" : "Rest Time");
 		current_time = 0;
-		ui.actionButton->setText("Start");
+		ui.actionButton->setIcon(QIcon(":/Icons/assets/play.png"));
 		progressbar->set_value(current_time);
 		displayCounterTime(total_time);
 }
@@ -259,6 +259,11 @@ void MainWindow::updateSettings()
 void MainWindow::on_actionButton_clicked()
 {
 	this->start();
+}
+
+void MainWindow::on_stopButton_clicked()
+{
+	this->reset_timer(pomo_time);
 }
 
 
