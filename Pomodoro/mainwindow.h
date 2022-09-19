@@ -31,7 +31,6 @@ private slots:
 	void on_stopButton_clicked();
 	void on_btnExit_clicked();
 	void on_btnMinimize_clicked();
-	void on_cbAlwaysOnTop_stateChanged();
 	void on_btnOpenSettings_clicked();
 	void on_btnIcon_clicked();
 
@@ -50,8 +49,7 @@ private:
 	void load_settings();
 	void reset_timer(int);
 	void open_settings();
-	void toggle_always_top(bool);
-	//int hide_title_bar();
+	void toggle_always_top();
 
 	bool isHideTitleBarActive;
 	bool isAutoStartRestTimeActive;

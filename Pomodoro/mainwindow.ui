@@ -327,50 +327,6 @@ QPlainTextEdit {
            <number>0</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="cbAlwaysOnTop">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>15</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>15</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QCheckBox::indicator:checked {
-	background-color: #ff79c6;
-	border: none;
-}
-QCheckBox::indicator:unchecked{
-	background-color: rgba(189, 147, 249, 145);
-	border: none;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="btnMinimize">
             <property name="minimumSize">
              <size>

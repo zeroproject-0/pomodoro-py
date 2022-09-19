@@ -99,7 +99,6 @@ void MainWindow::load_settings()
 	rest_time = Settings::load_settings("rest_time", 300, "SettingsWindow").value<int>();
 	isAlwaysTop = Settings::load_settings("always_top", false, GROUP).value<bool>();
 
-	ui.cbAlwaysOnTop->setChecked(isAlwaysTop);
 	isHideTitleBarActive = Settings::load_settings("hide_title_bar", false, "SettingsWindow").value<bool>();
 	isAutoStartRestTimeActive = Settings::load_settings("auto_start_rest_time", true, "SettingsWindow").value<bool>();
 
@@ -125,7 +124,7 @@ void MainWindow::open_settings()
 {
 	if (timer->isActive()) {
 		timer->stop();
-		ui.actionButton->setText("Start");
+		ui.actionButton->setIcon(QIcon(":/Icons/assets/play.png"));
 	}
 
 	SettingsWindow* settingsWindow = new SettingsWindow(this);
@@ -136,15 +135,11 @@ void MainWindow::open_settings()
 	QObject::connect(settingsWindow, &QDialog::accepted, this, &MainWindow::updateSettings);
 }
 
-void MainWindow::toggle_always_top(bool click = false)
+void MainWindow::toggle_always_top()
 {
-	if (!click) {
-		isAlwaysTop = !isAlwaysTop;
-	}
-	else {
-		isAlwaysTop = ui.cbAlwaysOnTop->isChecked();
-	}
+	isAlwaysTop = !isAlwaysTop;
 	Settings::save_settings("always_top", isAlwaysTop, GROUP);
+
 	this->setWindowFlag(Qt::WindowStaysOnTopHint, isAlwaysTop);
 	this->show();
 }
@@ -191,11 +186,6 @@ void MainWindow::on_btnMinimize_clicked()
 	this->showMinimized();
 }
 
-void MainWindow::on_cbAlwaysOnTop_stateChanged()
-{
-	toggle_always_top(true);
-}
-
 void MainWindow::on_btnOpenSettings_clicked()
 {
 	open_settings();
@@ -214,7 +204,7 @@ void MainWindow::tray_open_settings()
 void MainWindow::tray_always_top()
 {
 	toggle_always_top();
-	ui.cbAlwaysOnTop->setCheckState(isAlwaysTop ? Qt::CheckState::Checked : Qt::CheckState::Unchecked);
+	
 }
 
 void MainWindow::tray_minimize()

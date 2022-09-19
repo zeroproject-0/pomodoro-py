@@ -66,6 +66,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 9pt;</string>
+      </property>
       <property name="text">
        <string>Pomo Time (mm:ss):</string>
       </property>
@@ -130,6 +133,9 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 9pt;</string>
+      </property>
       <property name="text">
        <string>Rest Time (mm:ss):</string>
       </property>
@@ -158,6 +164,9 @@
         <width>71</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 9pt;</string>
       </property>
       <property name="text">
        <string>Hide top bar</string>
@@ -250,6 +259,9 @@ QPushButton:hover:!pressed {
         <width>111</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 9pt;</string>
       </property>
       <property name="text">
        <string>Auto start rest time</string>
