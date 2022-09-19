@@ -263,6 +263,7 @@ void MainWindow::on_actionButton_clicked()
 
 void MainWindow::on_stopButton_clicked()
 {
+	isPomoTime = true;
 	this->reset_timer(pomo_time);
 }
 
