@@ -98,6 +98,7 @@ void MainWindow::load_settings()
 	pomo_time = Settings::load_settings("pomo_time", 1500, "SettingsWindow").value<int>();
 	rest_time = Settings::load_settings("rest_time", 300, "SettingsWindow").value<int>();
 	isAlwaysTop = Settings::load_settings("always_top", false, GROUP).value<bool>();
+	this->setWindowFlag(Qt::WindowStaysOnTopHint, isAlwaysTop);
 
 	isHideTitleBarActive = Settings::load_settings("hide_title_bar", false, "SettingsWindow").value<bool>();
 	isAutoStartRestTimeActive = Settings::load_settings("auto_start_rest_time", true, "SettingsWindow").value<bool>();
@@ -204,7 +205,6 @@ void MainWindow::tray_open_settings()
 void MainWindow::tray_always_top()
 {
 	toggle_always_top();
-	
 }
 
 void MainWindow::tray_minimize()
