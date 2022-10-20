@@ -94,6 +94,7 @@
     <QtMoc Include="mainwindow.h" />
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="MainWindowSmall.ui" />
     <QtUic Include="settingswindow.ui" />
     <ResourceCompile Include="Pomodoro.rc" />
   </ItemGroup>

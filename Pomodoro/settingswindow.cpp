@@ -1,4 +1,5 @@
 #include "settingswindow.h"
+#include <QMessageBox>
 
 SettingsWindow::SettingsWindow(QWidget *parent)
 	: QDialog(parent)
@@ -42,11 +43,21 @@ void SettingsWindow::load_settings()
 	int rest_time = Settings::load_settings("rest_time", 300, GROUP).value<int>();
 	bool hide_title_bar = Settings::load_settings("hide_title_bar", false, GROUP).value<bool>();
 	bool auto_start_rest_time = Settings::load_settings("auto_start_rest_time", false, GROUP).value<bool>();
-	
+	bool is_small = Settings::load_settings("is_small", false, "MainWindow").value<bool>();
+
 	ui.sbPMinutes->setValue(pomo_time / 60);
 	ui.sbPSeconds->setValue(pomo_time % 60);
 	ui.sbRMinutes->setValue(rest_time / 60);
 	ui.sbRSeconds->setValue(rest_time % 60);
+	ui.cbSmallPomo->setChecked(is_small);
 	ui.cbAutoHideTitleBar->setChecked(hide_title_bar);
 	ui.cbAutoStartRestTime->setChecked(auto_start_rest_time);
+}
+
+void SettingsWindow::on_cbSmallPomo_clicked(bool checked) {
+	QMessageBox confirmation;
+	confirmation.setText("To change size you need to restart the application");
+	confirmation.setWindowFlag(Qt::WindowStaysOnTopHint);
+	confirmation.exec();
+	Settings::save_settings("is_small", checked, "MainWindow");
 }

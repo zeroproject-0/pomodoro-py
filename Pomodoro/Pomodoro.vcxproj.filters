@@ -75,5 +75,8 @@
     <QtUic Include="settingswindow.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="MainWindowSmall.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
