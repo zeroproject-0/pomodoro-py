@@ -14,10 +14,11 @@ SOURCES += ./progressbar.cpp \
 		./mainwindow.cpp \
 		./main.cpp
 FORMS += ./mainwindow.ui \
-    ./settingswindow.ui
+    ./settingswindow.ui \
+    ./mainwindowsmall.ui
 RESOURCES += mainwindow.qrc
 
-win32:RC_FILE = Pomodoro.rc
+win32:RC_FILE = Zomodoro.rc
 
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

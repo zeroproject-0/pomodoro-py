@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
-  a.setApplicationName("Pomodoro");
+  a.setApplicationName("Zomodoro");
   a.setApplicationVersion("2.0.0");
   a.setOrganizationName("zeroproject");
   a.setOrganizationDomain("https://zeroproject.dev");
