@@ -7,7 +7,7 @@ arch=('x86_64')
 url="https://github.com/zeroproject-dev/zomodoro"
 license=('MIT')
 depends=('qt6-base')
-makedepends=('git', 'qmake', 'make')
+makedepends=('git' 'qmake' 'make')
 source=('zomodoro::git://github.com/zeroproject-dev/zomodoro.git')
 md5sums=('SKIP')
 
