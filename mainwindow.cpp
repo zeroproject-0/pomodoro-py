@@ -73,8 +73,8 @@ void MainWindow::displayCounterTime(int total_time)
 	QString minutes_formated = parseDisplayTime(minutes);
 	QString seconds_formated = parseDisplayTime(seconds);
 
-	ui.minutes->display(minutes_formated.toLatin1());
-	ui.seconds->display(seconds_formated.toLatin1());
+    ui.minutes->display(QString(minutes_formated.toLatin1()));
+    ui.seconds->display(QString(seconds_formated.toLatin1()));
 }
 
 void MainWindow::start()
@@ -344,8 +344,8 @@ void MainWindowSmall::displayCounterTime(int total_time)
 	QString minutes_formated = parseDisplayTime(minutes);
 	QString seconds_formated = parseDisplayTime(seconds);
 
-	ui.minutes->display(minutes_formated.toLatin1());
-	ui.seconds->display(seconds_formated.toLatin1());
+    ui.minutes->display(QString(minutes_formated.toLatin1()));
+    ui.seconds->display(QString(seconds_formated.toLatin1()));
 }
 
 void MainWindowSmall::start()

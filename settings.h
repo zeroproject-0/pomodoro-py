@@ -1,4 +1,5 @@
 #pragma once
+
 #include <QtCore/qmap.h>
 #include <QtCore/qjsonobject.h>
 #include "mainwindow.h"

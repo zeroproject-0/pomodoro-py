@@ -1,10 +1,12 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
 #include "ui_mainwindow.h"
-#include "ui_MainWindowSmall.h";
+#include "ui_MainWindowSmall.h"
 #include "progressbar.h"
+#include "settings.h"
 #include "settingswindow.h"
+
+#include <QtWidgets/QMainWindow>
 #include <QMenu>
 #include <QSystemTrayIcon>
 
@@ -23,7 +25,7 @@ protected:
 	void paintEvent(QPaintEvent*) override;
 	void mousePressEvent(QMouseEvent*) override;
 	void mouseMoveEvent(QMouseEvent*) override;
-	void enterEvent(QEnterEvent*) override;
+    void enterEvent(QEnterEvent*);
 	void leaveEvent(QEvent*) override;
 	void contextMenuEvent(QContextMenuEvent*) override;
 
