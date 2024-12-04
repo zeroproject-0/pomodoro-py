@@ -1,8 +1,6 @@
 #pragma once
 
 #include "progressbar.h"
-#include "settings.h"
-#include "settingswindow.h"
 #include "ui_mainwindow.h"
 #include "ui_mainwindowsmall.h"
 
@@ -24,12 +22,11 @@ protected:
   void paintEvent(QPaintEvent *) override;
   void mousePressEvent(QMouseEvent *) override;
   void mouseMoveEvent(QMouseEvent *) override;
-  void enterEvent(QEnterEvent *);
   void leaveEvent(QEvent *) override;
   void contextMenuEvent(QContextMenuEvent *) override;
 
 private slots:
-  void on_actionButton_clicked();
+  void onActionButtonClicked();
   void on_stopButton_clicked();
   void on_btnExit_clicked();
   void on_btnMinimize_clicked();

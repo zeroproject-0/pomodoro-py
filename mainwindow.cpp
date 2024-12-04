@@ -1,4 +1,8 @@
 #include "mainwindow.h"
+#include "settingswindow.h"
+
+#include "settings.h"
+
 #include <QScreen>
 #include <QDebug>
 
@@ -129,7 +133,7 @@ void MainWindow::open_settings()
 		ui.actionButton->setIcon(QIcon(":/Icons/assets/play.png"));
 	}
 
-	SettingsWindow* settingsWindow = new SettingsWindow(this);
+    SettingsWindow* settingsWindow = new SettingsWindow(this);
 
 	settingsWindow->setModal(true);
 	settingsWindow->show();
@@ -163,10 +167,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent* e)
 	QPoint* delta = new QPoint(e->globalPos() - *old_position);
 	this->move(this->x() + delta->x(), this->y() + delta->y());
 	*old_position = e->globalPos();
-}
-
-void MainWindow::enterEvent(QEnterEvent*)
-{
 }
 
 void MainWindow::leaveEvent(QEvent*)
@@ -247,7 +247,7 @@ void MainWindow::updateSettings()
 	reset_timer(pomo_time);
 }
 
-void MainWindow::on_actionButton_clicked()
+void MainWindow::onActionButtonClicked()
 {
 	this->start();
 }
